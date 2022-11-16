@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 require("dotenv").config();
 const dbConfig = require("./config/dbConfig");
 app.use(express.json());
@@ -7,6 +8,7 @@ const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute");
 const mechanicRoute = require("./routes/mechanicsRoute");
 const path = require("path");
+app.use(cors());
 
 app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);

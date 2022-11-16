@@ -25,7 +25,7 @@ module.exports = async (user, mailType) => {
     await token.save();
     let mailOptions, emailContent;
     if (mailType === "verifyemail") {
-      emailContent = `<div><h1>Please click on the below link to verify your email address</h1> <a href="https://bikemechanic.herokuapp.com/verifyemail/${encryptedToken}">${encryptedToken}</a>  </div>`;
+      emailContent = `<div><h1>Please click on the below link to verify your email address</h1> <a href="https://motorcycle-servicing-company.herokuapp.com/verifyemail/${encryptedToken}">Click Here to Verify E-mail</a>  </div>`;
 
       mailOptions = {
         from: process.env.EMAIL,

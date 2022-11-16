@@ -35,7 +35,7 @@ module.exports = async (user, mailType, admin) => {
         </div>`;
 
       mailOptions = {
-        from: process.env.EMAIL,
+        from: "Motorcycle Servicing Company",
         to: user.email,
         subject: "Password Reset Successfull",
         html: emailContent,
@@ -50,7 +50,7 @@ module.exports = async (user, mailType, admin) => {
         </div>`;
 
       mailOptions = {
-        from: process.env.EMAIL,
+        from: "Motorcycle Servicing Company",
         to: process.env.EMAIL,
         subject: "Message from Website(get-in-touch)",
         html: emailContent,
@@ -59,7 +59,7 @@ module.exports = async (user, mailType, admin) => {
       emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="https://motorcycle-servicing-company.netlify.app/resetpassword/${encryptedToken}">Click here to Reset Password</a> </div>`;
 
       mailOptions = {
-        from: process.env.EMAIL,
+        from: "Motorcycle Servicing Company",
         to: user.email,
         subject: "Reset Password",
         html: emailContent,

@@ -28,7 +28,7 @@ module.exports = async (user, mailType) => {
       emailContent = `<div><h1>Please click on the below link to verify your email address</h1> <a href="https://motorcycle-servicing-company.netlify.app/verifyemail/${encryptedToken}">Click Here to Verify E-mail</a>  </div>`;
 
       mailOptions = {
-        from: process.env.EMAIL,
+        from: "Motorcycle Servicing Company",
         to: user.email,
         subject: "Verify Email | MSC Login",
         html: emailContent,
@@ -40,7 +40,7 @@ module.exports = async (user, mailType) => {
       </div>`;
 
       mailOptions = {
-        from: process.env.EMAIL,
+        from: "Motorcycle Servicing Company",
         to: user.email,
         subject: "Welcome to MSC | A Motorcycle Servicing Company",
         html: emailContent,

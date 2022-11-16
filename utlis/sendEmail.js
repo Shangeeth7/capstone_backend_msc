@@ -56,7 +56,7 @@ module.exports = async (user, mailType, admin) => {
         html: emailContent,
       };
     } else {
-      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="https://motorcycle-servicing-company.herokuapp.com/resetpassword/${encryptedToken}">Click here to Reset Password</a> </div>`;
+      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="https://motorcycle-servicing-company.netlify.app/resetpassword/${encryptedToken}">Click here to Reset Password</a> </div>`;
 
       mailOptions = {
         from: process.env.EMAIL,

@@ -14,7 +14,7 @@ app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);
 app.use("/api/mechanic", mechanicRoute);
 
-const port = process.env.PORT || 9988;
+const port = process.env.PORT || 9321;
 
 app.get("/", (req, res) =>
   res.send(` 

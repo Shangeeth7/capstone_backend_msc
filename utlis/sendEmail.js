@@ -35,7 +35,7 @@ module.exports = async (user, mailType, admin) => {
         </div>`;
 
       mailOptions = {
-        from: "Motorcycle Servicing Company",
+        from: process.env.EMAIL,
         to: user.email,
         subject: "Password Reset Successfull",
         html: emailContent,
@@ -50,16 +50,16 @@ module.exports = async (user, mailType, admin) => {
         </div>`;
 
       mailOptions = {
-        from: "Motorcycle Servicing Company",
+        from: process.env.EMAIL,
         to: process.env.EMAIL,
         subject: "Message from Website(get-in-touch)",
         html: emailContent,
       };
     } else {
-      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="https://motorcycle-servicing-company.netlify.app/resetpassword/${encryptedToken}">Click here to Reset Password</a> </div>`;
+      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="https://bikemechanic.herokuapp.com/resetpassword/${encryptedToken}">${encryptedToken}</a> </div>`;
 
       mailOptions = {
-        from: "Motorcycle Servicing Company",
+        from: process.env.EMAIL,
         to: user.email,
         subject: "Reset Password",
         html: emailContent,

@@ -25,10 +25,10 @@ module.exports = async (user, mailType) => {
     await token.save();
     let mailOptions, emailContent;
     if (mailType === "verifyemail") {
-      emailContent = `<div><h1>Please click on the below link to verify your email address</h1> <a href="https://motorcycle-servicing-company.netlify.app/verifyemail/${encryptedToken}">Click Here to Verify E-mail</a>  </div>`;
+      emailContent = `<div><h1>Please click on the below link to verify your email address</h1> <a href="https://bikemechanic.herokuapp.com/verifyemail/${encryptedToken}">${encryptedToken}</a>  </div>`;
 
       mailOptions = {
-        from: "Motorcycle Servicing Company",
+        from: process.env.EMAIL,
         to: user.email,
         subject: "Verify Email | MSC Login",
         html: emailContent,
@@ -40,7 +40,7 @@ module.exports = async (user, mailType) => {
       </div>`;
 
       mailOptions = {
-        from: "Motorcycle Servicing Company",
+        from: process.env.EMAIL,
         to: user.email,
         subject: "Welcome to MSC | A Motorcycle Servicing Company",
         html: emailContent,

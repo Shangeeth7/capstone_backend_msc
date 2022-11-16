@@ -15,7 +15,16 @@ app.use("/api/admin", adminRoute);
 app.use("/api/mechanic", mechanicRoute);
 
 const port = process.env.PORT || 9988;
-console.log(process.env.PORT);
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) =>
+  res.send(` 
+  <div style="padding-left:20px;height:100vh;max-width:200vh;background-image: url('https://silodrome.com/wp-content/uploads/2014/08/Honda-Custom-Motorcycle-3.jpg');background-repeat: no-repeat; ">
+  <div style="padding-top:50px;">
+  <h2 style="color:white;">Hey it's the Backend Server for <span style="color:orange;" >Motorcycle Serviving Company | MSC .</span> <h2>   <br />
+  <a href="/" style="color:white;"> Click here for <span style="color:orange;padding-left:5px;" >  MSC - Frontend.</span> </a>
+  </div>
+  </div>
+  
+`)
+);
 app.listen(port, () => console.log(`Node Express Server Started at ${port}!`));
